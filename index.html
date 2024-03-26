@@ -7,21 +7,7 @@
 </head>
 <body>
     <h1>Welcome to the Homepage</h1>
-    
-    <form id="passwordForm">
-        <label for="passwordInput">Enter your password:</label>
-        <input type="text" id="passwordInput" name="passwordInput">
-        <button type="submit">Submit</button>
-    </form>
-
-    <p id="result"></p>
-
-    <script src="passwordValidation.js"></script>
-    <script>
-        document.getElementById('passwordForm').addEventListener('submit', function(event) {
-            event.preventDefault(); // Prevent form submission
-            validatePassword();
-        });
-    </script>
+    <p>Click below to go to the password page:</p>
+    <a href="password.html">Go to Password Page</a>
 </body>
 </html>
