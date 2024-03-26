@@ -3,41 +3,43 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Voting System</title>
+    <title>Password System</title>
 </head>
 <body>
-    <h1>Voting System</h1>
+    <h1>Password System</h1>
     
-    <form id="votingForm">
-        <label for="numberInput">Enter your number:</label>
-        <input type="text" id="numberInput" name="numberInput">
+    <form id="passwordForm">
+        <label for="passwordInput">Enter your password:</label>
+        <input type="text" id="passwordInput" name="passwordInput">
         <button type="submit">Submit</button>
     </form>
 
     <p id="result"></p>
 
     <script>
-        document.getElementById('votingForm').addEventListener('submit', function(event) {
+        document.getElementById('passwordForm').addEventListener('submit', function(event) {
             event.preventDefault(); // Prevent form submission
 
             // Get the input value
-            var number = document.getElementById('numberInput').value.trim();
+            var password = document.getElementById('passwordInput').value.trim();
 
-            // Calculate the final vote based on the input
-            var finalVote = calculateFinalVote(number);
+            // Define your table of correspondence (you can add more entries as needed)
+            var correspondenceTable = {
+                "145678": "Your final vote is 28",
+                "345898": "Your final vote is 30",
+                // Add more entries as needed
+            };
+
+            // Look up the password in the correspondence table
+            var message = correspondenceTable[password];
 
             // Display the result
-            document.getElementById('result').textContent = "Your final vote is " + finalVote;
-        });
-
-        function calculateFinalVote(number) {
-            // Calculate the sum of digits in the number
-            var sum = 0;
-            for (var i = 0; i < number.length; i++) {
-                sum += parseInt(number.charAt(i), 10);
+            if (message) {
+                document.getElementById('result').textContent = message;
+            } else {
+                document.getElementById('result').textContent = "Invalid password";
             }
-            return sum;
-        }
+        });
     </script>
 </body>
 </html>
