@@ -130,8 +130,8 @@ input, select, textarea {
 /* Type */
 
 	body {
-		/*background-image: url('../../images/3148.jpg');*/
-		background-color: #2F5D50; /* Alternativa*/
+		background-image: url('../../images/bg2.png');
+		/*background-color: #2F5D50; Alternativa*/
 		color: rgba(255, 255, 255, 0.65);
 	}
 
