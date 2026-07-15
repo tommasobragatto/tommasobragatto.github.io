@@ -6,11 +6,41 @@
 -->
 <html>
 	<head>
-		<title>Dettaglio sul progetto</title>
+		<title class="lang-it">Dettaglio sul progetto</title>
+		<title class="lang-en">Project Details</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+		<style>
+			.lang-en { display: none; }
+			.lang-switch-container {
+				margin-top: 15px;
+				display: block;
+			}
+			.lang-btn {
+				background: transparent;
+				border: 1px solid rgba(255, 255, 255, 0.3);
+				color: #fff !important;
+				padding: 0.2em 0.6em;
+				cursor: pointer;
+				font-size: 0.75em;
+				border-radius: 4px;
+				margin: 0 2px;
+				transition: all 0.2s ease;
+			}
+			.lang-btn.active {
+				background: #fff;
+				color: #63757d !important;
+				font-weight: bold;
+			}
+			.nav-back {
+				display: inline-block;
+				margin-bottom: 20px;
+				text-decoration: none;
+				border-bottom: 1px dashed;
+			}
+		</style>
 	</head>
 	<body class="is-preload">
 
@@ -19,8 +49,15 @@
 
 				<!-- Header -->
 					<header id="header">
-						<h1>Il progetto DiTRI</h1>
+						<a href="index.html" class="nav-back"><span class="lang-it">&larr; Torna alla Home</span><span class="lang-en">&larr; Back to Home</span></a>
+						<h1><span class="lang-it">Il progetto DiTRI</span><span class="lang-en">The DiTRI Project</span></h1>
 						<p>Overview</p>
+						
+						<!-- Finestra Switch Lingua nell'Header dell'overview -->
+						<div class="lang-switch-container">
+							<button class="lang-btn active" onclick="setLanguage('it')">IT</button>
+							<button class="lang-btn" onclick="setLanguage('en')">EN</button>
+						</div>
 					</header>
 
 				<!-- Main -->
@@ -28,18 +65,37 @@
 
 						<!-- Content -->
 							<section id="content" class="main">
-								<span class="image main"><img src="images/Logo_DiTRi-SF_bianco.svg" alt="" /></span>
-								<h2>Contesto</h2>
-								<p>L'integrazione crescente di fonti rinnovabili, veicoli elettrici e comunità energetiche sta modificando le esigenze delle reti di distribuzione. Le reti ibride AC/DC offrono una risposta tecnica a queste esigenze, permettendo una gestione più efficiente dei flussi energetici e riducendo le conversioni. La loro diffusione è però ancora limitata, tra l'altro, dalla mancanza di strumenti adeguati di supervisione e controllo.</p>
+								<span class="image main"><img src="images/Logo_DiTRi-SF_bianco.svg" alt="DiTRI Logo" /></span>
+								
+								<!-- CONTENUTO IN ITALIANO -->
+								<div class="lang-it">
+									<h2>Contesto</h2>
+									<p>L'integrazione crescente di fonti rinnovabili, veicoli elettrici e comunità energetiche sta modificando le esigenze delle reti di distribuzione. Le reti ibride AC/DC offrono una risposta tecnica a queste esigenze, permettendo una gestione più efficiente dei flussi energetici e riducendo le conversioni. La loro diffusione è però ancora limitata, tra l'altro, dalla mancanza di strumenti adeguati di supervisione e controllo.</p>
 
-								<h2>L'approccio del progetto</h2>
-								<p>DiTRI sviluppa un Digital Twin per una rete di distribuzione ibrida AC/DC in bassa tensione. Il sistema si basa su sensori IoT a basso costo e integra algoritmi di machine learning e deep learning per il monitoraggio in tempo reale, la previsione dei profili di generazione e carico, e l'ottimizzazione dell'uso delle risorse energetiche.</p>
+									<h2>L'approccio del progetto</h2>
+									<p>DiTRI sviluppa un Digital Twin per una rete di distribuzione ibrida AC/DC in bassa tensione. Il sistema si basa su sensori IoT a basso costo e integra algoritmi di machine learning e deep learning per il monitoraggio in tempo reale, la previsione dei profili di generazione e carico, e l'ottimizzazione dell'uso delle risorse energetiche.</p>
 
-								<h2>La validazione sul campo</h2>
-								<p>Il Digital Twin viene integrato e testato su un impianto pilota già operativo nella rete di ASM Terni, realizzato nell'ambito del progetto europeo H2020 HYPERRIDE. L'obiettivo è portare la soluzione da TRL 5 a TRL 7, verificandone il funzionamento in condizioni reali.</p>
+									<h2>La validazione sul campo</h2>
+									<p>Il Digital Twin viene integrato e testato su un impianto pilota già operativo nella rete di ASM Terni, realizzato nell'ambito del progetto europeo H2020 HYPERRIDE. L'obiettivo è portare la soluzione da TRL 5 a TRL 7, verificandone il funzionamento in condizioni reali.</p>
 
-								<h2>Partenariato e prospettive</h2>
-								<p>Il progetto coinvolge aziende e centri di ricerca italiani con competenze complementari. I risultati, validati sul pilota, potranno trovare applicazione nel mercato della distribuzione energetica, contribuendo agli obiettivi di digitalizzazione delle reti previsti dalla Green Powered Future Mission di Mission Innovation.</p>
+									<h2>Partenariato e prospettive</h2>
+									<p>Il progetto coinvolge aziende e centri di ricerca italiani con competenze complementari. I risultati, validati sul pilota, potranno trovare applicazione nel mercato della distribuzione energetica, contribuendo agli obiettivi di digitalizzazione delle reti previsti dalla Green Powered Future Mission di Mission Innovation.</p>
+								</div>
+								
+								<!-- CONTENUTO IN INGLESE -->
+								<div class="lang-en">
+									<h2>Context</h2>
+									<p>The increasing integration of renewable sources, electric vehicles, and energy communities is reshaping the demands on distribution networks. Hybrid AC/DC grids offer a technical solution to these requirements, enabling more efficient energy flow management and reducing power conversions. However, their widespread adoption is still limited, among other factors, by the lack of adequate supervision and control tools.</p>
+
+									<h2>Project Approach</h2>
+									<p>DiTRI develops a Digital Twin for a low-voltage hybrid AC/DC distribution network. The system relies on low-cost IoT sensors and integrates machine learning and deep learning algorithms for real-time monitoring, forecasting generation and load profiles, and optimizing the use of energy resources.</p>
+
+									<h2>Field Validation</h2>
+									<p>The Digital Twin is integrated and tested on a pilot plant already operational within the ASM Terni network, built as part of the European H2020 HYPERRIDE project. The objective is to scale the solution from TRL 5 to TRL 7, verifying its operation under real-world conditions.</p>
+
+									<h2>Partnership and Outlook</h2>
+									<p>The project involves Italian companies and research centers with complementary expertise. The results, validated on the pilot, will find application in the energy distribution market, contributing to the grid digitalization targets set by the Green Powered Future Mission of Mission Innovation.</p>
+								</div>
 							</section>
 
 					</div>
@@ -47,22 +103,11 @@
 				<!-- Footer -->
 					<footer id="footer">
 						<section>
-							<h2>Ringraziamenti</h2>
-							<p>Il progetto DiTRI (ID: MI_DDR_00279) ha ricevuto fondi dal MASE a valere sulla iniziativa “Mission 2.0” nell’Area strategica “Dati e digitalizzazione di rete”. Le opinioni espresse in questo documento riflettono esclusivamente il punto di vista dell’autore e non rappresentano in alcun modo le opinioni del MASE. Il MASE non è responsabile di alcun uso che possa essere fatto delle informazioni in esso contenute.</p>
-							<!--<ul class="actions">
-								<li><a href="generic.html" class="button">Learn More</a></li>
-							</ul>-->
+							<h2><span class="lang-it">Ringraziamenti</span><span class="lang-en">Acknowledgments</span></h2>
+							<p class="lang-it">Il progetto DiTRI (ID: MI_DDR_00279) ha ricevuto fondi dal MASE a valere sulla iniziativa “Mission 2.0” nell’Area strategica “Dati e digitalizzazione di rete”. Le opinioni espresse in questo documento riflettono esclusivamente il punto di vista dell’autore e non rappresentano in alcun modo le opinioni del MASE. Il MASE non è responsabile di alcun uso che possa essere fatto delle informazioni in esso contenute.</p>
+							<p class="lang-en">The DiTRI project (ID: MI_DDR_00279) received funding from MASE under the "Mission 2.0" initiative in the Strategic Area "Network Data and Digitalization". The views expressed in this document reflect exclusively the author's opinions and do not in any way represent the views of MASE. MASE is not responsible for any use that may be made of the information contained therein.</p>
 						</section>
 						<section>
-							<!--<h2>Etiam feugiat</h2>
-							<dl class="alt">
-								<dt>Address</dt>
-								<dd>1234 Somewhere Road &bull; Nashville, TN 00000 &bull; USA</dd>
-								<dt>Phone</dt>
-								<dd>(000) 000-0000 x 0000</dd>
-								<dt>Email</dt>
-								<dd><a href="#">information@untitled.tld</a></dd>
-							</dl>-->
 							<ul class="icons">
 								<li><a href="#" class="icon brands fa-linkedin alt"><span class="label">Linkedin</span></a></li>
 								<li><a href="#" class="icon brands fa-github alt"><span class="label">GitHub</span></a></li>
@@ -82,6 +127,28 @@
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
+			
+			<script>
+				function setLanguage(lang) {
+					localStorage.setItem('selectedLanguage', lang);
+					if(lang === 'en') {
+						$('.lang-it').hide();
+						$('.lang-en').show();
+						$('.lang-btn').removeClass('active');
+						$('button[onclick="setLanguage(\'en\')"]').addClass('active');
+					} else {
+						$('.lang-en').hide();
+						$('.lang-it').show();
+						$('.lang-btn').removeClass('active');
+						$('button[onclick="setLanguage(\'it\')"]').addClass('active');
+					}
+				}
+
+				$(document).ready(function() {
+					var savedLang = localStorage.getItem('selectedLanguage') || 'it';
+					setLanguage(savedLang);
+				});
+			</script>
 
 	</body>
 </html>
