@@ -1,0 +1,218 @@
+<!DOCTYPE HTML>
+<!--
+	Stellar by HTML5 UP | Personalizzato per DiTRI
+-->
+<html>
+	<head>
+		<title class="lang-it">Nome Azienda - DiTRI</title>
+		<title class="lang-en">Company Name - DiTRI</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+		<style>
+			.lang-en { display: none; }
+			
+			/* Layout per la sezione Azienda (Logo a Sinistra, Testo a Destra) */
+			.company-header {
+				display: flex;
+				align-items: flex-start;
+				gap: 2rem;
+				margin-bottom: 3rem;
+			}
+			.company-logo-container {
+				flex: 0 0 30%;
+				max-width: 250px;
+				text-align: center;
+			}
+			.company-logo-container img {
+				width: 100%;
+				height: auto;
+				max-height: 180px;
+				object-fit: contain;
+			}
+			.company-details {
+				flex: 1;
+				text-align: justify;
+			}
+			
+			/* Layout Fototessera Team allineate di 3 in 3 */
+			.team-grid {
+				display: grid;
+				grid-template-columns: repeat(3, 1fr);
+				gap: 2rem;
+				margin-top: 1.5rem;
+			}
+			.team-member {
+				text-align: center;
+			}
+			.team-member img {
+				width: 130px;
+				height: 130px;
+				border-radius: 50%;
+				object-fit: cover;
+				margin: 0 auto 1rem auto;
+				display: block;
+				border: 3px solid rgba(0,0,0,0.08);
+			}
+
+			/* Responsive per schermi piccoli (Smartphone) */
+			@media screen and (max-width: 736px) {
+				.company-header {
+					flex-direction: column;
+					align-items: center;
+				}
+				.company-logo-container {
+					max-width: 100%;
+				}
+				.team-grid {
+					grid-template-columns: repeat(1, 1fr);
+				}
+			}
+		</style>
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header" class="alt">
+						<span class="logo"><img src="images/Logo_DiTRi-SF_bianco.svg" alt="DiTRI Logo" /></span>
+						<h1>DiTRI</h1>
+						<p class="lang-it">Implementazione di un <strong>Di</strong>gital <strong>T</strong>win per migliorare il<br />
+						controllo, la flessibilità e la resilienza di una <strong>R</strong>ete di<br />
+						distribuzione pubblica <strong>I</strong>brida AC/DC</p>
+						<p class="lang-en">Implementation of a <strong>Di</strong>gital <strong>T</strong>win to improve the<br />
+						control, flexibility, and resilience of a Public <strong>H</strong>ybrid AC/DC Distribution Network</p>
+					</header>
+
+				<!-- Nav -->
+					<nav id="nav">
+						<ul>
+							<li><a href="index.html#intro"><span class="lang-it"><strong>Il Progetto</strong></span><span class="lang-en"><strong>The Project</strong></span></a></li>
+							<li><a href="index.html#chi_siamo"><span class="lang-it"><strong>Chi Siamo</strong></span><span class="lang-en"><strong>About Us</strong></span></a></li>
+							<li><a href="index.html#second"><span class="lang-it"><strong>Pubblicazioni</strong></span><span class="lang-en"><strong>Publications</strong></span></a></li>
+							<li><a href="index.html#first"><span class="lang-it"><strong>News</strong></span><span class="lang-en"><strong>News</strong></span></a></li>
+							<li><a href="index.html#cta"><span class="lang-it"><strong>Contatti</strong></span><span class="lang-en"><strong>Contact</strong></span></a></li>
+							<li style="vertical-align: middle; padding-left: 15px;"><div id="google_translate_element"></div></li>
+							<li><a href="#" class="lang-btn active" onclick="setLanguage('it'); return false;"><strong>IT</strong></a></li>
+							<li><a href="#" class="lang-btn" onclick="setLanguage('en'); return false;"><strong>EN</strong></a></li>
+						</ul>
+					</nav>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Content Section -->
+							<section id="content" class="main" style="margin-top: 2rem;">
+								
+								<!-- SEZIONE AZIENDA: FIGURA A SINISTRA + TESTO A DESTRA -->
+								<div class="company-header">
+									<div class="company-logo-container">
+										<img src="images/iloveimg-resized/logo-01solutions.jpg" alt="Logo Azienda" />
+									</div>
+									<div class="company-details">
+										<h2><strong>01 Solutions s.r.l.</strong></h2>
+										
+										<!-- Descrizione IT -->
+										<div class="lang-it">
+											<p>01Solutions S.r.l. è responsabile delle sviluppo di sensori innovativi dispositivi IoT autoalimentati (iSensor) e senza cablaggio per il monitoraggio in tempo reale della corrente alternata. Si occupa dell'industrializzazione e della certificazione CE-RED del sensore, ingegnerizzando il design meccanico anche tramite prototipazione rapida in stampa 3D. Realizza l'infrastruttura cloud e la centralina di raccolta dati che funge da gateway per trasmettere le misure di campo al modulo di acquisizione del DT. Supporta l'installazione e la verifica operativa della rete di sensori distribuita presso il sito pilota per garantire l'osservabilità della bassa tensione.</p>
+										</div>
+										
+										<!-- Descrizione EN -->
+										<div class="lang-en">
+											<p>01Solutions S.r.l. develops iSensors, innovative self-powered, wireless IoT devices for real-time monitoring of alternating current. The company handles the industrialization and CE-RED certification of the sensor, engineering the mechanical design—including through rapid prototyping using 3D printing. It develops the cloud infrastructure and the data collection unit, which acts as a gateway to transmit field measurements to the DT acquisition module. It supports the installation and operational testing of the distributed sensor network at the pilot site to ensure the observability of low-voltage systems.</p>
+										</div>
+									</div>
+								</div>
+
+								<hr />
+
+								<!-- SEZIONE TEAM: FOTOTESSERE ALLINEATE 3 IN 3 -->
+								<div style="margin-top: 3rem;">
+									<h3 style="text-align: center; margin-bottom: 2rem;">
+										<span class="lang-it"><strong>Team di Progetto</strong></span>
+										<span class="lang-en"><strong>Project Team</strong></span>
+									</h3>
+
+									<div class="team-grid">
+										
+										<!-- Membro 1 -->
+										<div class="team-member">
+											<img src="images/team/avatar.avif" alt="Mario Rossi" />
+											<h4><strong>Andrea Cellini</strong></h4>
+											<p style="margin: 0;">Responsabile del team<br /> </p>
+										</div>
+
+
+ 										<!-- Membro 6 -->
+<!--										<div class="team-member">
+											<img src="images/team/avatar.avif" alt="Marco Viola" />
+											<h4><strong>Marco Viola</strong></h4>
+											<p style="margin: 0;">Specialista IoT</p>
+										</div> -->
+									</div>
+								</div>
+
+							</section>
+
+					</div>
+
+				<!-- Footer -->
+					<footer id="footer">
+						<section>
+							<h2><span class="lang-it"><strong>Ringraziamenti</strong></span><span class="lang-en"><strong>Acknowledgments</strong></span></h2>
+							<p class="lang-it">Il progetto <strong>DiTRI</strong> (ID: MI_DDR_00279) ha ricevuto fondi dal <strong>MASE</strong> a valere sulla iniziativa <strong>“Mission 2.0”</strong> nell’Area strategica <strong>“Dati e digitalizzazione di rete”</strong>. Le opinioni espresse in questo documento riflettono esclusivamente il punto di vista dell’autore e non rappresentano in alcun modo le opinioni del MASE. Il MASE non è responsabile di alcun uso che possa essere fatto delle informazioni in esso contenute.</p>
+							<p class="lang-en">The <strong>DiTRI</strong> project (ID: MI_DDR_00279) received funding from <strong>MASE</strong> under the <strong>"Mission 2.0"</strong> initiative in the Strategic Area <strong>"Network Data and Digitalization"</strong>. The views expressed in this document reflect exclusively the author's opinions and do not in any way represent the views of MASE. MASE is not responsible for any use that may be made of the information contained therein.</p>
+						</section>
+						<section>
+							<ul class="icons">
+								<li><a href="https://www.linkedin.com/company/ditri/" class="icon brands fa-linkedin alt"><span class="label">Linkedin</span></a></li>								<li><a href="#" class="icon brands fa-github alt"><span class="label">GitHub</span></a></li>
+								<li><a href="#" class="icon brands fa-dribbble alt"><span class="label">Dribbble</span></a></li>
+							</ul>
+						</section>
+						<p class="copyright">&copy; Untitled. Design: <a href="https://html5up.net">HTML5 UP</a>.</p>
+					</footer>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+			
+			<!-- Script personalizzato per Lingua e Scroll Automatico -->
+			<script>
+				function setLanguage(lang) {
+					localStorage.setItem('selectedLanguage', lang);
+					if(lang === 'en') {
+						$('.lang-it').hide();
+						$('.lang-en').show();
+						$('.lang-btn').removeClass('active');
+						$('a[onclick*="\'en\'"]').addClass('active');
+					} else {
+						$('.lang-en').hide();
+						$('.lang-it').show();
+						$('.lang-btn').removeClass('active');
+						$('a[onclick*="\'it\'"]').addClass('active');
+					}
+				}
+
+				$(window).on('load', function() {
+					var savedLang = localStorage.getItem('selectedLanguage') || 'it';
+					setLanguage(savedLang);
+					$('body').removeClass('is-preload');
+
+					setTimeout(function() {
+						$('html, body').scrollTop($("#main").offset().top - 60);
+					}, 100);
+				});
+			</script>
+
+	</body>
+</html>

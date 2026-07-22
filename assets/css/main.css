@@ -3797,3 +3797,63 @@ input, select, textarea {
 			}
 
 		}
+/* ====================================================
+   FORZATURA GLOBALE BLU SCURO + ECCEZIONI
+   ==================================================== */
+
+/* 1. Forza QUALSIASI testo del sito ad essere Blu Scuro */
+#wrapper, 
+#wrapper *, 
+body * {
+    color: #0b2545 !important;
+}
+
+/* 2. Eccezione: Titolo principale dell'Header ("DiTRI") BIANCO */
+#header h1 {
+    color: #ffffff !important;
+}
+
+/* 3. Eccezione: Sottotitolo nell'header GRIGIO CHIARO */
+#header p {
+    color: rgba(255, 255, 255, 0.65) !important;
+}
+
+/* 4. ECCEZIONE FOOTER: Tutto il testo, titoli, link e icone nel Footer tornano CHIARI */
+#footer, 
+#footer *, 
+#footer p, 
+#footer h2, 
+#footer a, 
+#footer .icon {
+    color: rgba(255, 255, 255, 0.75) !important;
+}
+
+/* Opzionale: Titolo del Footer leggermente più brillante */
+#footer h2 {
+    color: #ffffff !important;
+}
+
+/* 1. Forza QUALSIASI testo del sito ad essere Blu Scuro */
+#wrapper, 
+#wrapper *, 
+body * {
+    color: #0b2545 !important;
+}
+
+/* 2. Eccezione: Titolo principale dell'Header ("DiTRI") BIANCO */
+#header h1, #header h1 * {
+    color: #ffffff !important;
+}
+
+/* 3. Eccezione: Sottotitolo e relative lettere in <strong> nell'header GRIGIO CHIARO / BIANCO */
+#header p, #header p * {
+    color: rgba(255, 255, 255, 0.75) !important;
+}
+
+/* 4. Eccezione: Footer chiaro */
+#footer, #footer *, #footer p, #footer h2, #footer a, #footer .icon {
+    color: rgba(255, 255, 255, 0.75) !important;
+}
+#footer h2 {
+    color: #ffffff !important;
+}
