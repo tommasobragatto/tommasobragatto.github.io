@@ -1,0 +1,412 @@
+<!DOCTYPE HTML>
+<!--
+	Stellar by HTML5 UP | Personalizzato per DiTRI
+-->
+<html>
+	<head>
+		<title class="lang-it">News - DiTRI</title>
+		<title class="lang-en">News - DiTRI</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+		<style>
+			.lang-en { display: none; }
+			
+			/* Layout Notizia: Immagine a Sinistra, Testo a Destra */
+			.news-item {
+				display: flex;
+				align-items: flex-start;
+				gap: 2rem;
+				margin-bottom: 2.5rem;
+				padding-bottom: 2.5rem;
+				border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+			}
+			.news-item:last-child {
+				border-bottom: none;
+			}
+			.news-image {
+				flex: 0 0 25%;
+				max-width: 220px;
+				text-align: center;
+			}
+			.news-image img {
+				width: 100%;
+				height: 150px;
+				object-fit: cover;
+				border-radius: 8px;
+			}
+			.news-content {
+				flex: 1;
+				text-align: justify;
+			}
+			.news-date {
+				font-size: 0.85em;
+				color: #888;
+				margin-bottom: 0.5rem;
+				display: block;
+			}
+
+			/* Gestione paginazione / scroll delle notizie extra */
+			.news-item.hidden-news {
+				display: none;
+			}
+			.load-more-container {
+				text-align: center;
+				margin-top: 2rem;
+			}
+
+			/* Responsive per Smartphone */
+			@media screen and (max-width: 736px) {
+				.news-item {
+					flex-direction: column;
+					align-items: center;
+				}
+				.news-image {
+					max-width: 100%;
+					width: 100%;
+				}
+				.news-image img {
+					height: 200px;
+				}
+			}
+		</style>
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header (Identico al template) -->
+					<header id="header" class="alt">
+						<span class="logo"><img src="images/Logo_DiTRi-SF_bianco.svg" alt="DiTRI Logo" /></span>
+						<h1>DiTRI</h1>
+						<p class="lang-it">Implementazione di un <strong>Di</strong>gital <strong>T</strong>win per migliorare il<br />
+						controllo, la flessibilità e la resilienza di una <strong>R</strong>ete di<br />
+						distribuzione pubblica <strong>I</strong>brida AC/DC</p>
+						<p class="lang-en">Implementation of a <strong>Di</strong>gital <strong>T</strong>win to improve the<br />
+						control, flexibility, and resilience of a Public <strong>H</strong>ybrid AC/DC Distribution Network</p>
+					</header>
+
+				<!-- Nav (Identico all'Homepage) -->
+					<nav id="nav">
+						<ul>
+							<li><a href="index.html#intro"><span class="lang-it"><strong>Il Progetto</strong></span><span class="lang-en"><strong>The Project</strong></span></a></li>
+							<li><a href="index.html#chi_siamo"><span class="lang-it"><strong>Chi Siamo</strong></span><span class="lang-en"><strong>About Us</strong></span></a></li>
+							<li><a href="index.html#second"><span class="lang-it"><strong>Pubblicazioni</strong></span><span class="lang-en"><strong>Publications</strong></span></a></li>
+							<li><a href="index.html#first"><span class="lang-it"><strong>News</strong></span><span class="lang-en"><strong>News</strong></span></a></li>
+							<li><a href="index.html#cta"><span class="lang-it"><strong>Contatti</strong></span><span class="lang-en"><strong>Contact</strong></span></a></li>
+							<li style="vertical-align: middle; padding-left: 15px;"><div id="google_translate_element"></div></li>
+							<li><a href="#" class="lang-btn active" onclick="setLanguage('it'); return false;"><strong>IT</strong></a></li>
+							<li><a href="#" class="lang-btn" onclick="setLanguage('en'); return false;"><strong>EN</strong></a></li>
+						</ul>
+					</nav>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Content Section -->
+							<section id="content" class="main" style="margin-top: 2rem;">
+								
+								<h2 style="text-align: center; margin-bottom: 3rem;">
+									<span class="lang-it"><strong>News</strong></span>
+									<span class="lang-en"><strong>News</strong></span>
+								</h2>
+
+								<!-- CONTENITORE NOTIZIE -->
+								<div id="news-list">
+
+									<!-- NOTIZIA 1 -->
+									<div class="news-item">
+										<div class="news-image">
+											<img src="images/pic01.jpg" alt="News 1" />
+										</div>
+										<div class="news-content">
+											<span class="news-date">15 Luglio 2026</span>
+											<h3><strong>Titolo della Prima Notizia del Progetto</strong></h3>
+											<div class="lang-it">
+												<p>Testo della notizia in italiano. L'integrazione crescente di fonti rinnovabili e comunità energetiche sta modificando profondamente le reti elettriche. Il progetto DiTRI entra nella sua fase operativa di test sui sensori IoT installati nella rete pilota di Terni.</p>
+											</div>
+											<div class="lang-en">
+												<p>English news content. The increasing integration of renewable sources and energy communities is reshaping power grids. The DiTRI project enters its operational testing phase on IoT sensors deployed in the Terni pilot network.</p>
+											</div>
+										</div>
+									</div>
+
+									<!-- NOTIZIA 2 -->
+									<div class="news-item">
+										<div class="news-image">
+											<img src="images/pic02.jpg" alt="News 2" />
+										</div>
+										<div class="news-content">
+											<span class="news-date">02 Giugno 2026</span>
+											<h3><strong>Avvio della Fase di Test sul Campo del Digital Twin</strong></h3>
+											<div class="lang-it">
+												<p>Sviluppati i primi moduli di Machine Learning dedicati alla stima in tempo reale dei flussi energetici nelle reti ibride AC/DC. I test preliminari mostrano una precisione elevata nei profili di carico.</p>
+											</div>
+											<div class="lang-en">
+												<p>Initial Machine Learning modules for real-time energy flow estimation in hybrid AC/DC grids have been developed. Preliminary tests show high accuracy in load profiling.</p>
+											</div>
+										</div>
+									</div>
+
+									<!-- NOTIZIA 3 -->
+									<div class="news-item">
+										<div class="news-image">
+											<img src="images/pic03.jpg" alt="News 3" />
+										</div>
+										<div class="news-content">
+											<span class="news-date">20 Maggio 2026</span>
+											<h3><strong>Incontro del Consorzio e Workshop Tecnico</strong></h3>
+											<div class="lang-it">
+												<p>I partner del consorzio si sono riuniti per fare il punto sul passaggio da TRL 5 a TRL 7. Presentate le architetture dei sensori IoT sviluppati dalle aziende partner.</p>
+											</div>
+											<div class="lang-en">
+												<p>Consortium partners gathered to review progress on scaling from TRL 5 to TRL 7. IoT sensor architectures developed by partner companies were presented.</p>
+											</div>
+										</div>
+									</div>
+
+									<!-- NOTIZIA 4 -->
+									<div class="news-item">
+										<div class="news-image">
+											<img src="images/pic01.jpg" alt="News 4" />
+										</div>
+										<div class="news-content">
+											<span class="news-date">10 Aprile 2026</span>
+											<h3><strong>Pubblicato il Primo Paper Scientifico del Progetto</strong></h3>
+											<div class="lang-it">
+												<p>I risultati relativi all'ottimizzazione delle reti ibride sono stati pubblicati su una rivista internazionale di settore a cura del team di ricerca.</p>
+											</div>
+											<div class="lang-en">
+												<p>Results on hybrid grid optimization have been published in an international peer-reviewed journal by the research team.</p>
+											</div>
+										</div>
+									</div>
+
+									<!-- NOTIZIA 5 -->
+									<div class="news-item">
+										<div class="news-image">
+											<img src="images/pic02.jpg" alt="News 5" />
+										</div>
+										<div class="news-content">
+											<span class="news-date">28 Marzo 2026</span>
+											<h3><strong>Integrazione dei Sensori IoT sulla Rete Pilota</strong></h3>
+											<div class="lang-it">
+												<p>Completata la prima installazione fisica dell'hardware di monitoraggio su campo presso gli impianti di ASM Terni.</p>
+											</div>
+											<div class="lang-en">
+												<p>First physical deployment of monitoring hardware completed on field at ASM Terni facilities.</p>
+											</div>
+										</div>
+									</div>
+
+									<!-- NOTIZIA 6 -->
+									<div class="news-item">
+										<div class="news-image">
+											<img src="images/pic03.jpg" alt="News 6" />
+										</div>
+										<div class="news-content">
+											<span class="news-date">15 Febbraio 2026</span>
+											<h3><strong>Definizione degli Algoritmi di Deep Learning</strong></h3>
+											<div class="lang-it">
+												<p>Finalizzata la struttura della rete neurale per la previsione della generazione da fonti rinnovabili su scala locale.</p>
+											</div>
+											<div class="lang-en">
+												<p>Neural network architecture for local renewable generation forecasting finalized.</p>
+											</div>
+										</div>
+									</div>
+
+									<!-- NOTIZIA 7 -->
+									<div class="news-item">
+										<div class="news-image">
+											<img src="images/pic01.jpg" alt="News 7" />
+										</div>
+										<div class="news-content">
+											<span class="news-date">20 Gennaio 2026</span>
+											<h3><strong>Presentazione di DiTRI all'Evento Mission Innovation</strong></h3>
+											<div class="lang-it">
+												<p>Il progetto è stato illustrato come caso di studio virtuoso nell'ambito della Green Powered Future Mission.</p>
+											</div>
+											<div class="lang-en">
+												<p>The project was presented as a successful case study within the Green Powered Future Mission initiative.</p>
+											</div>
+										</div>
+									</div>
+
+									<!-- NOTIZIA 8 -->
+									<div class="news-item">
+										<div class="news-image">
+											<img src="images/pic02.jpg" alt="News 8" />
+										</div>
+										<div class="news-content">
+											<span class="news-date">05 Dicembre 2025</span>
+											<h3><strong>Raggiunto il Milestones per l'Architettura Software</strong></h3>
+											<div class="lang-it">
+												<p>Approvata l'architettura cloud per la gestione dei dati provenienti dai sensori distribuiti sulla rete.</p>
+											</div>
+											<div class="lang-en">
+												<p>Cloud infrastructure milestone approved for handling data streams from distributed sensors.</p>
+											</div>
+										</div>
+									</div>
+
+									<!-- NOTIZIA 9 -->
+									<div class="news-item">
+										<div class="news-image">
+											<img src="images/pic03.jpg" alt="News 9" />
+										</div>
+										<div class="news-content">
+											<span class="news-date">18 Novembre 2025</span>
+											<h3><strong>Meeting Intermedio di Verifica delle Attività</strong></h3>
+											<div class="lang-it">
+												<p>Verifica positiva sullo stato di avanzamento dei deliverable previsti dal piano di lavoro con i revisori MASE.</p>
+											</div>
+											<div class="lang-en">
+												<p>Positive progress check on work plan deliverables conducted with MASE reviewers.</p>
+											</div>
+										</div>
+									</div>
+
+									<!-- NOTIZIA 10 -->
+									<div class="news-item">
+										<div class="news-image">
+											<img src="images/pic01.jpg" alt="News 10" />
+										</div>
+										<div class="news-content">
+											<span class="news-date">30 Ottobre 2025</span>
+											<h3><strong>Workshop sulla Resilienza delle Reti AC/DC</strong></h3>
+											<div class="lang-it">
+												<p>Tavola rotonda con esperti di settore sulle problematiche di conversione e stabilità della tensione nelle reti basse tensioni.</p>
+											</div>
+											<div class="lang-en">
+												<p>Roundtable with industry experts addressing power conversion and voltage stability in low voltage networks.</p>
+											</div>
+										</div>
+									</div>
+
+									<!-- NOTIZIA 11 (Oltre le 10: inizialmente nascosta) -->
+									<div class="news-item hidden-news">
+										<div class="news-image">
+											<img src="images/pic02.jpg" alt="News 11" />
+										</div>
+										<div class="news-content">
+											<span class="news-date">12 Settembre 2025</span>
+											<h3><strong>Kick-off Meeting Tecnico a Roma</strong></h3>
+											<div class="lang-it">
+												<p>I ricercatori e gli ingegneri del consorzio si sono dati appuntamento presso la Sapienza Università di Roma per definire i protocolli di comunicazione.</p>
+											</div>
+											<div class="lang-en">
+												<p>Consortium researchers and engineers met at Sapienza University of Rome to define communication protocols.</p>
+											</div>
+										</div>
+									</div>
+
+									<!-- NOTIZIA 12 (Oltre le 10: inizialmente nascosta) -->
+									<div class="news-item hidden-news">
+										<div class="news-image">
+											<img src="images/pic03.jpg" alt="News 12" />
+										</div>
+										<div class="news-content">
+											<span class="news-date">01 Settembre 2025</span>
+											<h3><strong>Avvio Ufficiale del Progetto DiTRI</strong></h3>
+											<div class="lang-it">
+												<p>Prende ufficialmente il via il progetto DiTRI finanziato dal MASE a valere sull'iniziativa "Mission 2.0".</p>
+											</div>
+											<div class="lang-en">
+												<p>Official launch of the DiTRI project funded by MASE under the "Mission 2.0" initiative.</p>
+											</div>
+										</div>
+									</div>
+
+								</div>
+
+								<!-- PULSANTE PER CARICARE LE ULTERIORI NOTIZIE -->
+								<div class="load-more-container">
+									<button id="load-more-btn" class="button">
+										<span class="lang-it">Carica altre notizie</span>
+										<span class="lang-en">Load more news</span>
+									</button>
+								</div>
+
+							</section>
+
+					</div>
+
+				<!-- Footer -->
+					<footer id="footer">
+						<section>
+							<h2><span class="lang-it"><strong>Ringraziamenti</strong></span><span class="lang-en"><strong>Acknowledgments</strong></span></h2>
+							<p class="lang-it">Il progetto <strong>DiTRI</strong> (ID: MI_DDR_00279) ha ricevuto fondi dal <strong>MASE</strong> a valere sulla iniziativa <strong>“Mission 2.0”</strong> nell’Area strategica <strong>“Dati e digitalizzazione di rete”</strong>. Le opinioni espresse in questo documento riflettono esclusivamente il punto di vista dell’autore e non rappresentano in alcun modo le opinioni del MASE. Il MASE non è responsabile di alcun uso che possa essere fatto delle informazioni in esso contenute.</p>
+							<p class="lang-en">The <strong>DiTRI</strong> project (ID: MI_DDR_00279) received funding from <strong>MASE</strong> under the <strong>"Mission 2.0"</strong> initiative in the Strategic Area <strong>"Network Data and Digitalization"</strong>. The views expressed in this document reflect exclusively the author's opinions and do not in any way represent the views of MASE. MASE is not responsible for any use that may be made of the information contained therein.</p>
+						</section>
+						<section>
+							<ul class="icons">
+								<li><a href="#" class="icon brands fa-linkedin alt"><span class="label">Linkedin</span></a></li>
+								<li><a href="#" class="icon brands fa-github alt"><span class="label">GitHub</span></a></li>
+								<li><a href="#" class="icon brands fa-dribbble alt"><span class="label">Dribbble</span></a></li>
+							</ul>
+						</section>
+						<p class="copyright">&copy; Untitled. Design: <a href="https://html5up.net">HTML5 UP</a>.</p>
+					</footer>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+			
+			<!-- Script personalizzato per Lingua, Scroll e Paginazione Notizie -->
+			<script>
+				function setLanguage(lang) {
+					localStorage.setItem('selectedLanguage', lang);
+					if(lang === 'en') {
+						$('.lang-it').hide();
+						$('.lang-en').show();
+						$('.lang-btn').removeClass('active');
+						$('a[onclick*="\'en\'"]').addClass('active');
+					} else {
+						$('.lang-en').hide();
+						$('.lang-it').show();
+						$('.lang-btn').removeClass('active');
+						$('a[onclick*="\'it\'"]').addClass('active');
+					}
+				}
+
+				$(window).on('load', function() {
+					var savedLang = localStorage.getItem('selectedLanguage') || 'it';
+					setLanguage(savedLang);
+					$('body').removeClass('is-preload');
+
+					setTimeout(function() {
+						$('html, body').scrollTop($("#main").offset().top - 60);
+					}, 100);
+				});
+
+				// Logica per caricare ulteriori 10 notizie al click
+				$(document).ready(function() {
+					// Nasconde il pulsante se non ci sono più di 10 notizie iniziali
+					if ($('.hidden-news').length === 0) {
+						$('#load-more-btn').hide();
+					}
+
+					$('#load-more-btn').on('click', function() {
+						// Mostra fino a un massimo di 10 notizie nascoste alla volta
+						$('.hidden-news').slice(0, 10).removeClass('hidden-news').fadeIn();
+						
+						// Se non rimangono più notizie nascoste, nasconde il pulsante
+						if ($('.hidden-news').length === 0) {
+							$('#load-more-btn').fadeOut();
+						}
+					});
+				});
+			</script>
+
+	</body>
+</html>
