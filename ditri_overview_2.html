@@ -6,8 +6,7 @@
 -->
 <html>
 	<head>
-		<title class="lang-it">Dettaglio sul progetto - DiTRI</title>
-		<title class="lang-en">Project Details - DiTRI</title>
+		<title>DiTRI</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
@@ -35,7 +34,13 @@
 				<!-- Nav (Identico all'Homepage: rimanda alle sezioni di index.html) -->
 					<nav id="nav">
 						<ul>
-							<li><a href="index.html#intro"><span class="lang-it"><strong>Il Progetto</strong></span><span class="lang-en"><strong>The Project</strong></span></a></li>
+																		<li>
+								<a href="index.html" title="Home">
+									<span class="icon solid fa-layer-group" style="font-size: 1.2em;"></span>
+								</a>
+							</li>
+
+							<li><a href="index.html#intro" class="active nav-active"><span class="lang-it"><strong>Il Progetto</strong></span><span class="lang-en"><strong>The Project</strong></span></a></li>
 							<li><a href="index.html#chi_siamo"><span class="lang-it"><strong>Chi Siamo</strong></span><span class="lang-en"><strong>About Us</strong></span></a></li>
 							<li><a href="index.html#second"><span class="lang-it"><strong>Pubblicazioni</strong></span><span class="lang-en"><strong>Publications</strong></span></a></li>
 							<li><a href="index.html#first"><span class="lang-it"><strong>News</strong></span><span class="lang-en"><strong>News</strong></span></a></li>
@@ -115,37 +120,54 @@
 			<script src="assets/js/main.js"></script>
 			
 <!-- Script personalizzato per Lingua e Scroll Automatico -->
-			<script>
-				function setLanguage(lang) {
-					localStorage.setItem('selectedLanguage', lang);
-					if(lang === 'en') {
-						$('.lang-it').hide();
-						$('.lang-en').show();
-						$('.lang-btn').removeClass('active');
-						$('a[onclick*="\'en\'"]').addClass('active');
-					} else {
-						$('.lang-en').hide();
-						$('.lang-it').show();
-						$('.lang-btn').removeClass('active');
-						$('a[onclick*="\'it\'"]').addClass('active');
-					}
-				}
+<script>
+    function setLanguage(lang) {
+        // 1. Memorizziamo le voci del menu principale attualmente attive (escludendo i bottoni IT/EN)
+        var $activeNav = $('#nav ul li a.active').not('.lang-btn');
 
-				// Usiamo window.onload per essere certi che il tema e la pagina siano pronti
-				$(window).on('load', function() {
-					// 1. Ripristina la lingua
-					var savedLang = localStorage.getItem('selectedLanguage') || 'it';
-					setLanguage(savedLang);
+        // 2. Salva la lingua nel localStorage
+        localStorage.setItem('selectedLanguage', lang);
 
-					// 2. Rimuove la classe di pre-caricamento di Stellar per sbloccare il layout
-					$('body').removeClass('is-preload');
+        // 3. Mostra/Nascondi i contenuti in base alla lingua
+        if(lang === 'en') {
+            $('.lang-it').hide();
+            $('.lang-en').show();
+            $('.lang-btn').removeClass('active');
+            $('a[onclick*="\'en\'"]').addClass('active');
+        } else {
+            $('.lang-en').hide();
+            $('.lang-it').show();
+            $('.lang-btn').removeClass('active');
+            $('a[onclick*="\'it\'"]').addClass('active');
+        }
 
-					// 3. Forziamo lo scroll al box principale (#main) con un minimo di delay
-					setTimeout(function() {
-						$('html, body').scrollTop($("#main").offset().top - 60);
-					}, 100);
-				});
-			</script>
+        // 4. Ripristiniamo la classe active sulla voce di menu
+        $activeNav.addClass('active nav-active');
+    }
+
+    // Usiamo window.onload per essere certi che il tema e la pagina siano pronti
+    $(window).on('load', function() {
+        // 1. Ripristina la lingua
+        var savedLang = localStorage.getItem('selectedLanguage') || 'it';
+        setLanguage(savedLang);
+
+        // 2. Rimuove la classe di pre-caricamento di Stellar per sbloccare il layout
+        $('body').removeClass('is-preload');
+
+        // 3. Forziamo lo scroll al box principale (#main) con un minimo di delay
+        setTimeout(function() {
+            $('html, body').scrollTop($("#main").offset().top - 60);
+        }, 100);
+    });
+
+    // Protezione extra: ripristina la voce attiva anche se lo script del tema risponde al click del mouse
+    $(document).on('click', '.lang-btn', function() {
+        var $activeNav = $('#nav ul li a.active').not('.lang-btn');
+        setTimeout(function() {
+            $activeNav.addClass('active nav-active');
+        }, 50);
+    });
+</script>
 
 	</body>
 </html>

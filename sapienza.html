@@ -4,8 +4,7 @@
 -->
 <html>
 	<head>
-		<title class="lang-it">Nome Azienda - DiTRI</title>
-		<title class="lang-en">Company Name - DiTRI</title>
+		<title>DiTRI</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
@@ -90,8 +89,14 @@
 				<!-- Nav -->
 					<nav id="nav">
 						<ul>
+																	<li>
+								<a href="index.html" title="Home">
+									<span class="icon solid fa-layer-group" style="font-size: 1.2em;"></span>
+								</a>
+							</li>
+
 							<li><a href="index.html#intro"><span class="lang-it"><strong>Il Progetto</strong></span><span class="lang-en"><strong>The Project</strong></span></a></li>
-							<li><a href="index.html#chi_siamo"><span class="lang-it"><strong>Chi Siamo</strong></span><span class="lang-en"><strong>About Us</strong></span></a></li>
+							<li><a href="index.html#chi_siamo" class="active nav-active"><span class="lang-it"><strong>Chi Siamo</strong></span><span class="lang-en"><strong>About Us</strong></span></a></li>
 							<li><a href="index.html#second"><span class="lang-it"><strong>Pubblicazioni</strong></span><span class="lang-en"><strong>Publications</strong></span></a></li>
 							<li><a href="index.html#first"><span class="lang-it"><strong>News</strong></span><span class="lang-en"><strong>News</strong></span></a></li>
 							<li><a href="index.html#cta"><span class="lang-it"><strong>Contatti</strong></span><span class="lang-en"><strong>Contact</strong></span></a></li>
@@ -118,12 +123,28 @@
 										<!-- Descrizione IT -->
 										<div class="lang-it">
 											<p>Sapienza, attraverso il Dipartimento di Ingegneria Elettrica ed Energetica, è il partner scientifico del progetto ed è responsabile della progettazione dell'architettura del Digital Twin e dello sviluppo dei moduli principali, inclusi la stima dello stato, i modelli predittivi e il gestore della flessibilità. Cura inoltre la validazione scientifica del sistema, il fine-tuning dei modelli in ambiente reale e la disseminazione dei risultati nella comunità scientifica.</p>
+											<!-- Link testuale bilingue allineato al testo -->
+<div style="margin-top: 15px;">
+    <a href="https://www.uniroma1.it" target="_blank" rel="noopener noreferrer" style="border-bottom: none; text-decoration: none; color: #0b2545; font-weight: bold; font-size: 0.9em;">
+        <span class="lang-it">Visita il sito web &rarr;</span>
+        <span class="lang-en">Visit website &rarr;</span>
+    </a>
+</div>
+											<!-- Link testuale bilingue al sito web -->
+
 										</div>
 										
 										<!-- Descrizione EN -->
 										<div class="lang-en">
 											<p>Sapienza, through its Department of Electrical and Energy Engineering, is the project’s scientific partner and is responsible for designing the Digital Twin architecture and developing the core algorithmic modules, including state estimation, predictive models, and the flexibility manager. It also oversees the scientific validation of the system, the fine-tuning of the models in a real-world environment, and the dissemination of the results to the scientific community.</p>
+											<div style="margin-top: 15px;">
+    <a href="https://www.uniroma1.it" target="_blank" rel="noopener noreferrer" style="border-bottom: none; text-decoration: none; color: #0b2545; font-weight: bold; font-size: 0.9em;">
+        <span class="lang-it">Visita il sito web &rarr;</span>
+        <span class="lang-en">Visit website &rarr;</span>
+    </a>
+</div>
 										</div>
+										
 									</div>
 								</div>
 
@@ -140,10 +161,24 @@
 										
 										<!-- Membro 1 -->
 										<div class="team-member">
-											<img src="images/team/avatar.avif" alt="Mario Rossi" />
+											<img src="images/team/geri.jpg" alt="Mario Rossi" />
 											<h4><strong>Alberto Geri</strong></h4>
 											<p style="margin: 0;">Responsabile del team<br /> Responsabile della Linea di Attività 4.2</p>
 										</div>
+
+										<!-- Membro 5 -->
+										<div class="team-member">
+											<img src="images/team/bragatto.jpg" alt="Sofia Gialli" />
+											<h4><strong>Tommaso Bragatto</strong></h4>
+											<p style="margin: 0;">Responsabile della Linea di Attività 1.2<br /> Responsabile della Linea di Attività 2.1 <br /> Responsabile della Linea di Attività 3.5</p>
+											<!-- Inserire sotto "Responsabile del team" -->
+										<p style="margin-top: 10px; font-size: 0.85em;">
+											<a href="cv/Bragatto.pdf" download style="color: #0b2545; text-decoration: none; border-bottom: none;">
+												<span class="icon solid fa-file-pdf" style="color: #d9534f; margin-right: 4px;"></span> CV
+											</a>
+										</p>
+										</div>
+
 
 										<!-- Membro 2 -->
 										<div class="team-member">
@@ -166,12 +201,7 @@
 											<p style="margin: 0;">Partecipante</p>
 										</div>
 
-										<!-- Membro 5 -->
-										<div class="team-member">
-											<img src="images/team/avatar.avif" alt="Sofia Gialli" />
-											<h4><strong>Tommaso Bragatto</strong></h4>
-											<p style="margin: 0;">Responsabile della Linea di Attività 1.2<br /> Responsabile della Linea di Attività 2.1 <br /> Responsabile della Linea di Attività 3.5</p>
-										</div>
+
 										
 
 
@@ -241,33 +271,51 @@
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
 			
-			<!-- Script personalizzato per Lingua e Scroll Automatico -->
-			<script>
-				function setLanguage(lang) {
-					localStorage.setItem('selectedLanguage', lang);
-					if(lang === 'en') {
-						$('.lang-it').hide();
-						$('.lang-en').show();
-						$('.lang-btn').removeClass('active');
-						$('a[onclick*="\'en\'"]').addClass('active');
-					} else {
-						$('.lang-en').hide();
-						$('.lang-it').show();
-						$('.lang-btn').removeClass('active');
-						$('a[onclick*="\'it\'"]').addClass('active');
-					}
-				}
+<script>
+    function setLanguage(lang) {
+        localStorage.setItem('selectedLanguage', lang);
+        
+        if(lang === 'en') {
+            $('.lang-it').hide();
+            $('.lang-en').show();
+            // Aggiorna lo stato dei soli pulsanti lingua
+            $('.lang-btn').removeClass('active');
+            $('a[onclick*="\'en\'"]').addClass('active');
+        } else {
+            $('.lang-en').hide();
+            $('.lang-it').show();
+            // Aggiorna lo stato dei soli pulsanti lingua
+            $('.lang-btn').removeClass('active');
+            $('a[onclick*="\'it\'"]').addClass('active');
+        }
 
-				$(window).on('load', function() {
-					var savedLang = localStorage.getItem('selectedLanguage') || 'it';
-					setLanguage(savedLang);
-					$('body').removeClass('is-preload');
+        // ASSICURA CHE "CHI SIAMO" RIMANGA ATTIVO/EVIDENZIATO
+        ripristinaNavAttiva();
+    }
 
-					setTimeout(function() {
-						$('html, body').scrollTop($("#main").offset().top - 60);
-					}, 100);
-				});
-			</script>
+    function ripristinaNavAttiva() {
+        // Seleziona il link di "Chi Siamo" e forza la classe active
+        $('a[href*="#chi_siamo"]').addClass('active nav-active');
+    }
+
+    $(window).on('load', function() {
+        var savedLang = localStorage.getItem('selectedLanguage') || 'it';
+        setLanguage(savedLang);
+        $('body').removeClass('is-preload');
+
+        // Garantisce che al caricamento il tasto sia attivo
+        ripristinaNavAttiva();
+
+        setTimeout(function() {
+            $('html, body').scrollTop($("#main").offset().top - 60);
+        }, 100);
+    });
+
+    // Protezione extra: se Stellar.js prova a rimuovere la classe al click
+    $(document).on('click', '.lang-btn', function() {
+        setTimeout(ripristinaNavAttiva, 50);
+    });
+</script>
 
 	</body>
 </html>

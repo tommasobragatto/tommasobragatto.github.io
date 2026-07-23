@@ -4,8 +4,7 @@
 -->
 <html>
 	<head>
-		<title class="lang-it">News - DiTRI</title>
-		<title class="lang-en">News - DiTRI</title>
+		<title>DiTRI</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
@@ -91,10 +90,15 @@
 				<!-- Nav (Identico all'Homepage) -->
 					<nav id="nav">
 						<ul>
+											<li>
+								<a href="index.html" title="Home">
+									<span class="icon solid fa-layer-group" style="font-size: 1.2em;"></span>
+								</a>
+							</li>
 							<li><a href="index.html#intro"><span class="lang-it"><strong>Il Progetto</strong></span><span class="lang-en"><strong>The Project</strong></span></a></li>
 							<li><a href="index.html#chi_siamo"><span class="lang-it"><strong>Chi Siamo</strong></span><span class="lang-en"><strong>About Us</strong></span></a></li>
 							<li><a href="index.html#second"><span class="lang-it"><strong>Pubblicazioni</strong></span><span class="lang-en"><strong>Publications</strong></span></a></li>
-							<li><a href="index.html#first"><span class="lang-it"><strong>News</strong></span><span class="lang-en"><strong>News</strong></span></a></li>
+							<li><a href="index.html#first" class="active nav-active"><span class="lang-it"><strong>News</strong></span><span class="lang-en"><strong>News</strong></span></a></li>							
 							<li><a href="index.html#cta"><span class="lang-it"><strong>Contatti</strong></span><span class="lang-en"><strong>Contact</strong></span></a></li>
 							<li style="vertical-align: middle; padding-left: 15px;"><div id="google_translate_element"></div></li>
 							<li><a href="#" class="lang-btn active" onclick="setLanguage('it'); return false;"><strong>IT</strong></a></li>
@@ -119,21 +123,21 @@
 									<!-- NOTIZIA 1 -->
 									<div class="news-item">
 										<div class="news-image">
-											<img src="images/pic01.jpg" alt="News 1" />
+											<img src="images/iloveimg-resized/dicea_home.jpg" alt="News 1" />
 										</div>
 										<div class="news-content">
 											<span class="news-date">15 Luglio 2026</span>
-											<h3><strong>Titolo della Prima Notizia del Progetto</strong></h3>
+										<h3 class="lang-it"><strong>Presentazione del progetto DiTRI agli studenti della Facoltà di Ingegneria Civile ed Industriale</strong></h3>
+										<h3 class="lang-en"><strong>Presentation of the DiTRI project to the students of the Faculty of Civil and Industrial Engineering</strong></h3>
 											<div class="lang-it">
-												<p>Testo della notizia in italiano. L'integrazione crescente di fonti rinnovabili e comunità energetiche sta modificando profondamente le reti elettriche. Il progetto DiTRI entra nella sua fase operativa di test sui sensori IoT installati nella rete pilota di Terni.</p>
+												<p>Nell'ambito delle attività formative della scuola di dottorato di ENGINEERING AND APPLIED SCIENCE FOR ENERGY AND INDUSTRY, è stato svolto un seminario di presentazione agli studenti per illustrare i benefici attesi dall'implementazione del progetto.</p>
 											</div>
 											<div class="lang-en">
-												<p>English news content. The increasing integration of renewable sources and energy communities is reshaping power grids. The DiTRI project enters its operational testing phase on IoT sensors deployed in the Terni pilot network.</p>
+												<p>As part of the training activities of the doctoral school in ENGINEERING AND APPLIED SCIENCE FOR ENERGY AND INDUSTRY, a presentation seminar was held for students to illustrate the expected benefits of the project implementation.</p>
 											</div>
 										</div>
 									</div>
-
-									<!-- NOTIZIA 2 -->
+<!--
 									<div class="news-item">
 										<div class="news-image">
 											<img src="images/pic02.jpg" alt="News 2" />
@@ -150,7 +154,6 @@
 										</div>
 									</div>
 
-									<!-- NOTIZIA 3 -->
 									<div class="news-item">
 										<div class="news-image">
 											<img src="images/pic03.jpg" alt="News 3" />
@@ -167,7 +170,6 @@
 										</div>
 									</div>
 
-									<!-- NOTIZIA 4 -->
 									<div class="news-item">
 										<div class="news-image">
 											<img src="images/pic01.jpg" alt="News 4" />
@@ -184,7 +186,6 @@
 										</div>
 									</div>
 
-									<!-- NOTIZIA 5 -->
 									<div class="news-item">
 										<div class="news-image">
 											<img src="images/pic02.jpg" alt="News 5" />
@@ -201,7 +202,6 @@
 										</div>
 									</div>
 
-									<!-- NOTIZIA 6 -->
 									<div class="news-item">
 										<div class="news-image">
 											<img src="images/pic03.jpg" alt="News 6" />
@@ -218,7 +218,6 @@
 										</div>
 									</div>
 
-									<!-- NOTIZIA 7 -->
 									<div class="news-item">
 										<div class="news-image">
 											<img src="images/pic01.jpg" alt="News 7" />
@@ -235,7 +234,6 @@
 										</div>
 									</div>
 
-									<!-- NOTIZIA 8 -->
 									<div class="news-item">
 										<div class="news-image">
 											<img src="images/pic02.jpg" alt="News 8" />
@@ -252,7 +250,6 @@
 										</div>
 									</div>
 
-									<!-- NOTIZIA 9 -->
 									<div class="news-item">
 										<div class="news-image">
 											<img src="images/pic03.jpg" alt="News 9" />
@@ -269,7 +266,6 @@
 										</div>
 									</div>
 
-									<!-- NOTIZIA 10 -->
 									<div class="news-item">
 										<div class="news-image">
 											<img src="images/pic01.jpg" alt="News 10" />
@@ -286,7 +282,6 @@
 										</div>
 									</div>
 
-									<!-- NOTIZIA 11 (Oltre le 10: inizialmente nascosta) -->
 									<div class="news-item hidden-news">
 										<div class="news-image">
 											<img src="images/pic02.jpg" alt="News 11" />
@@ -303,7 +298,6 @@
 										</div>
 									</div>
 
-									<!-- NOTIZIA 12 (Oltre le 10: inizialmente nascosta) -->
 									<div class="news-item hidden-news">
 										<div class="news-image">
 											<img src="images/pic03.jpg" alt="News 12" />
@@ -321,7 +315,7 @@
 									</div>
 
 								</div>
-
+-->
 								<!-- PULSANTE PER CARICARE LE ULTERIORI NOTIZIE -->
 								<div class="load-more-container">
 									<button id="load-more-btn" class="button">
@@ -362,51 +356,67 @@
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
 			
-			<!-- Script personalizzato per Lingua, Scroll e Paginazione Notizie -->
-			<script>
-				function setLanguage(lang) {
-					localStorage.setItem('selectedLanguage', lang);
-					if(lang === 'en') {
-						$('.lang-it').hide();
-						$('.lang-en').show();
-						$('.lang-btn').removeClass('active');
-						$('a[onclick*="\'en\'"]').addClass('active');
-					} else {
-						$('.lang-en').hide();
-						$('.lang-it').show();
-						$('.lang-btn').removeClass('active');
-						$('a[onclick*="\'it\'"]').addClass('active');
-					}
-				}
+<!-- Script personalizzato per Lingua, Scroll e Paginazione Notizie -->
+<!-- Script personalizzato per Lingua, Scroll e Paginazione Notizie -->
+<script>
+    function setLanguage(lang) {
+        // 1. Salva le voci di menu attive prima di cambiare lingua (escludendo IT/EN)
+        var $activeNav = $('#nav ul li a.active').not('.lang-btn');
 
-				$(window).on('load', function() {
-					var savedLang = localStorage.getItem('selectedLanguage') || 'it';
-					setLanguage(savedLang);
-					$('body').removeClass('is-preload');
+        localStorage.setItem('selectedLanguage', lang);
+        
+        if(lang === 'en') {
+            $('.lang-it').hide();
+            $('.lang-en').show();
+            $('.lang-btn').removeClass('active');
+            $('a[onclick*="\'en\'"]').addClass('active');
+        } else {
+            $('.lang-en').hide();
+            $('.lang-it').show();
+            $('.lang-btn').removeClass('active');
+            $('a[onclick*="\'it\'"]').addClass('active');
+        }
 
-					setTimeout(function() {
-						$('html, body').scrollTop($("#main").offset().top - 60);
-					}, 100);
-				});
+        // 2. Ripristina il quadrato/stato attivo sul menu
+        $activeNav.addClass('active nav-active');
+    }
 
-				// Logica per caricare ulteriori 10 notizie al click
-				$(document).ready(function() {
-					// Nasconde il pulsante se non ci sono più di 10 notizie iniziali
-					if ($('.hidden-news').length === 0) {
-						$('#load-more-btn').hide();
-					}
+    $(window).on('load', function() {
+        var savedLang = localStorage.getItem('selectedLanguage') || 'it';
+        setLanguage(savedLang);
+        $('body').removeClass('is-preload');
 
-					$('#load-more-btn').on('click', function() {
-						// Mostra fino a un massimo di 10 notizie nascoste alla volta
-						$('.hidden-news').slice(0, 10).removeClass('hidden-news').fadeIn();
-						
-						// Se non rimangono più notizie nascoste, nasconde il pulsante
-						if ($('.hidden-news').length === 0) {
-							$('#load-more-btn').fadeOut();
-						}
-					});
-				});
-			</script>
+        setTimeout(function() {
+            $('html, body').scrollTop($("#main").offset().top - 60);
+        }, 100);
+    });
+
+    // Protezione extra al click sui tasti IT/EN
+    $(document).on('click', '.lang-btn', function() {
+        var $activeNav = $('#nav ul li a.active').not('.lang-btn');
+        setTimeout(function() {
+            $activeNav.addClass('active nav-active');
+        }, 50);
+    });
+
+    // Logica per caricare ulteriori 10 notizie al click
+    $(document).ready(function() {
+        // Nasconde il pulsante se non ci sono più di 10 notizie iniziali
+        if ($('.hidden-news').length === 0) {
+            $('#load-more-btn').hide();
+        }
+
+        $('#load-more-btn').on('click', function() {
+            // Mostra fino a un massimo di 10 notizie nascoste alla volta
+            $('.hidden-news').slice(0, 10).removeClass('hidden-news').fadeIn();
+            
+            // Se non rimangono più notizie nascoste, nasconde il pulsante
+            if ($('.hidden-news').length === 0) {
+                $('#load-more-btn').fadeOut();
+            }
+        });
+    });
+</script>
 
 	</body>
 </html>

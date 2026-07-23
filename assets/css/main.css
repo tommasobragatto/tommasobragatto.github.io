@@ -3857,3 +3857,32 @@ body * {
 #footer h2 {
     color: #ffffff !important;
 }
+
+/* Ripristina la larghezza piena del blocco per non rimpicciolire i loghi */
+#chi_siamo .features li a {
+    display: block; /* Ritorna ad occupare tutta la larghezza */
+    width: 100%;
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+    text-decoration: none !important;
+    border-bottom: none !important;
+}
+
+/* Applica l'effetto di sollevamento al blocco */
+#chi_siamo .features li a:hover {
+    transform: translateY(-6px);
+    text-decoration: none !important;
+    border-bottom: none !important;
+}
+
+/* Mantiene l'ombra sui loghi al passaggio del mouse */
+#chi_siamo .features li a:hover img {
+    filter: drop-shadow(0px 8px 15px rgba(0, 0, 0, 0.15));
+}
+
+/* Cambia colore al testo senza aggiungere righe */
+#chi_siamo .features li a:hover h3 {
+    color: #0b2545 !important;
+    text-decoration: none !important;
+    border-bottom: none !important;
+}

@@ -4,8 +4,7 @@
 -->
 <html>
 	<head>
-		<title class="lang-it">Nome Azienda - DiTRI</title>
-		<title class="lang-en">Company Name - DiTRI</title>
+		<title>DiTRI</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
@@ -90,8 +89,14 @@
 				<!-- Nav -->
 					<nav id="nav">
 						<ul>
+																	<li>
+								<a href="index.html" title="Home">
+									<span class="icon solid fa-layer-group" style="font-size: 1.2em;"></span>
+								</a>
+							</li>
+
 							<li><a href="index.html#intro"><span class="lang-it"><strong>Il Progetto</strong></span><span class="lang-en"><strong>The Project</strong></span></a></li>
-							<li><a href="index.html#chi_siamo"><span class="lang-it"><strong>Chi Siamo</strong></span><span class="lang-en"><strong>About Us</strong></span></a></li>
+							<li><a href="index.html#chi_siamo" class="active nav-active"><span class="lang-it"><strong>Chi Siamo</strong></span><span class="lang-en"><strong>About Us</strong></span></a></li>
 							<li><a href="index.html#second"><span class="lang-it"><strong>Pubblicazioni</strong></span><span class="lang-en"><strong>Publications</strong></span></a></li>
 							<li><a href="index.html#first"><span class="lang-it"><strong>News</strong></span><span class="lang-en"><strong>News</strong></span></a></li>
 							<li><a href="index.html#cta"><span class="lang-it"><strong>Contatti</strong></span><span class="lang-en"><strong>Contact</strong></span></a></li>
@@ -118,11 +123,24 @@
 										<!-- Descrizione IT -->
 										<div class="lang-it">
 											<p>Sistematica progetta e sviluppa l'Interfaccia Utente dotata di un configuratore grafico visuale per modellare digitalmente asset fisici e logici della rete. Realizza il modulo di cybersecurity basato sulla Cyber Deception, creando una libreria di trappole digitali dinamiche (decoy) per il rilevamento proattivo delle minacce. Sviluppa meccanismi per l'identificazione automatica di accessi anomali, attivando allarmi immediati in caso di interazione non autorizzata con gli asset simulati. Cura il deployment della piattaforma su environment dedicati (on-premise o cloud) garantendo connettività sicura tramite protocolli crittografati</p>
+																																<div style="margin-top: 15px;">
+    <a href="https://grupposistematica.it/" target="_blank" rel="noopener noreferrer" style="border-bottom: none; text-decoration: none; color: #0b2545; font-weight: bold; font-size: 0.9em;">
+        <span class="lang-it">Visita il sito web &rarr;</span>
+        <span class="lang-en">Visit website &rarr;</span>
+    </a>
+</div>
+											
 										</div>
 										
 										<!-- Descrizione EN -->
 										<div class="lang-en">
 											<p>Sistematica designs and develops an advanced graphical user interface equipped with a visual configurator for digitally modeling physical and logical network assets. It implements a cybersecurity module based on cyber deception, creating a library of dynamic digital decoys for proactive threat detection. It develops mechanisms for the automatic identification of anomalous access, triggering immediate alerts in the event of unauthorized interaction with simulated assets. It manages the deployment of the platform in dedicated environments (on-premises or in the cloud), ensuring secure connectivity via encrypted protocols.</p>
+																																											<div style="margin-top: 15px;">
+    <a href="https://grupposistematica.it/" target="_blank" rel="noopener noreferrer" style="border-bottom: none; text-decoration: none; color: #0b2545; font-weight: bold; font-size: 0.9em;">
+        <span class="lang-it">Visita il sito web &rarr;</span>
+        <span class="lang-en">Visit website &rarr;</span>
+    </a>
+</div>
 										</div>
 									</div>
 								</div>
@@ -186,33 +204,51 @@
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
 			
-			<!-- Script personalizzato per Lingua e Scroll Automatico -->
-			<script>
-				function setLanguage(lang) {
-					localStorage.setItem('selectedLanguage', lang);
-					if(lang === 'en') {
-						$('.lang-it').hide();
-						$('.lang-en').show();
-						$('.lang-btn').removeClass('active');
-						$('a[onclick*="\'en\'"]').addClass('active');
-					} else {
-						$('.lang-en').hide();
-						$('.lang-it').show();
-						$('.lang-btn').removeClass('active');
-						$('a[onclick*="\'it\'"]').addClass('active');
-					}
-				}
+<script>
+    function setLanguage(lang) {
+        localStorage.setItem('selectedLanguage', lang);
+        
+        if(lang === 'en') {
+            $('.lang-it').hide();
+            $('.lang-en').show();
+            // Aggiorna lo stato dei soli pulsanti lingua
+            $('.lang-btn').removeClass('active');
+            $('a[onclick*="\'en\'"]').addClass('active');
+        } else {
+            $('.lang-en').hide();
+            $('.lang-it').show();
+            // Aggiorna lo stato dei soli pulsanti lingua
+            $('.lang-btn').removeClass('active');
+            $('a[onclick*="\'it\'"]').addClass('active');
+        }
 
-				$(window).on('load', function() {
-					var savedLang = localStorage.getItem('selectedLanguage') || 'it';
-					setLanguage(savedLang);
-					$('body').removeClass('is-preload');
+        // ASSICURA CHE "CHI SIAMO" RIMANGA ATTIVO/EVIDENZIATO
+        ripristinaNavAttiva();
+    }
 
-					setTimeout(function() {
-						$('html, body').scrollTop($("#main").offset().top - 60);
-					}, 100);
-				});
-			</script>
+    function ripristinaNavAttiva() {
+        // Seleziona il link di "Chi Siamo" e forza la classe active
+        $('a[href*="#chi_siamo"]').addClass('active nav-active');
+    }
+
+    $(window).on('load', function() {
+        var savedLang = localStorage.getItem('selectedLanguage') || 'it';
+        setLanguage(savedLang);
+        $('body').removeClass('is-preload');
+
+        // Garantisce che al caricamento il tasto sia attivo
+        ripristinaNavAttiva();
+
+        setTimeout(function() {
+            $('html, body').scrollTop($("#main").offset().top - 60);
+        }, 100);
+    });
+
+    // Protezione extra: se Stellar.js prova a rimuovere la classe al click
+    $(document).on('click', '.lang-btn', function() {
+        setTimeout(ripristinaNavAttiva, 50);
+    });
+</script>
 
 	</body>
 </html>
